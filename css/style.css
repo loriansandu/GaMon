@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+body{
+    margin: 0;
+    padding : 0;
+    background: linear-gradient(120deg,#44824e, #9b99ae);
+    height: 100vh;
+    overflow: auto;
+    font-family: "Poppins", sans-serif;
+
+}
+
+.center{
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background:white;
+    border-radius: 10px;
+    padding-bottom: 100px;
+    
+
+}
+
+.center h1{
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom: 2px solid #8b8b8e;
+    font-weight: 300;
+   
+}
+
+.center form{
+    padding:0 40px;
+    box-sizing: border-box;
+
+}
+
+form .txt_field{
+    position: relative;
+    border-bottom: 2px solid #8b8b8e;
+    margin: 30px 0;
+    
+
+
+}
+
+.txt_field input{
+    width: 90%;
+    padding: 0 5px;
+    height: 40px;
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 15px;
+    
+}
+
+.txt_field label{
+    position: absolute;
+    top: 50%;
+    left:5px;
+    color: #8b8b8e;
+    transform: translatey(-50%);
+    pointer-events: none;
+    transition: .5s;
+}
+
+.txt_field span::before{
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0%;
+    height:2px;
+    background: #44824e;
+    transition: .3s;
+
+}
+
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label{
+    top: -5px;
+    color:#44824e;
+}
+
+.txt_field input:focus ~ span::before,
+.txt_field input:valid ~ span::before{
+    width: 100%;
+}
+
+#loginButton,#registerButton{
+    width: 100%;
+    height:50px;
+    border: #44824e;
+    border-radius: 15px;
+    margin: 40px 0;
+    background-color:#44824e;
+    font-size: 15px;
+    color:aliceblue;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+#loginButton:hover{
+    box-shadow: inset 400px 0 0 0 rgba(0, 0, 0, 0.664);
+
+}
+#registerButton:hover:enabled{
+    box-shadow: inset 400px 0 0 0 rgba(0, 0, 0, 0.664);
+
+}
+
+#registerButton:hover:disabled{
+    cursor:not-allowed;
+}
+
+.sign_up{
+    margin: 20px 0;
+    text-align: center;
+    font-size: 15px;
+    color:#8b8b8e;
+}
+
+.sign_up a{
+    color:#388545;
+    text-decoration: none;
+}
+
+.sign_up a:hover{
+    text-decoration:underline;
+}
+
+#accountType{
+    width:100%;
+    margin-top: 20px;
+
+}
+
+@media only screen and (max-width: 850px) {
+ 
+    body{
+        max-width: 100%;
+        max-height: 100%;
+        background: none;
+        overflow: auto;
+        background: linear-gradient(120deg,#44824e, #9b99ae);
+    
+        
+    }
+   
+   .center{
+        top: 50%;
+        left: 50%;
+       width: 80%;
+       height: 80%;
+       
+   }
+
+   .center h1{
+       font-size:1.5em;
+   }
+
+}
+  
+  
+
+  @media only screen and (max-height: 600px) {
+
+   
+}
+  

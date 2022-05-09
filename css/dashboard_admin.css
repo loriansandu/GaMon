@@ -1,0 +1,185 @@
+.recent-grid {
+    margin-top: 3.5rem;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 3.5r;
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: 50% auto;
+
+
+}
+.customers .card{
+    height: 100%;
+}
+
+.collection-points{
+    width:auto;
+}
+.collection-points .card{
+    height: auto;
+}
+
+.card{
+    background: #C1E1C1;
+    border-radius: 5px;
+    height: auto;
+}
+
+.card-header,
+.card-body{
+    padding: 1rem;
+}
+
+.card-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid white;
+
+}
+
+.card-header button{
+    background: white;
+    border-radius: 10px;
+    color:#04AA6D;
+    font-size: .8rem;
+    padding: .5rem 1rem;
+    border: 1px solid white;
+    
+}
+.card-header button:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+  }
+
+table{
+    border-collapse: collapse;
+}
+
+thead tr{
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+   
+}
+
+thead td{
+    font-weight: 700;
+}
+
+td{
+    padding: .5rem 1rem ;
+    font-size: .9rem;
+    color: #222;
+
+}
+
+#remove-button,#delete-report-button {
+    color: red;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+#remove-button:hover,
+#remove-button:focus,#delete-report-button:hover,#delete-report-button:focus,#completed-report-button:hover,#completed-report-button:focus,#view-report-button:hover,#view-report-button:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+#completed-report-button{
+    color:green;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+}
+#view-report-button{
+    color:black;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#delete-report-button,#completed-report-button,#view-report-button{
+    padding-right: 20px;
+}
+
+
+tr td:last-child{
+    display: flex;
+    align-items: center;
+}
+
+
+.modal{
+    height: auto;
+    width: 50%;
+}
+.modal-footer {
+    height: 30px;
+  }
+  
+#remove-button{
+      display: flex;
+      align-items: flex-start;
+  }
+@media only screen and (max-width: 700px){
+
+    body{
+        max-width: 100%;
+        overflow-x: auto;
+    }
+    .recent-grid{
+        display: block;
+    }
+    .customers,.reports,.collection-points{
+        padding-bottom: 30px;
+        
+    }
+
+    .collection-points{
+        width: auto;
+    }
+     .modal{
+         width: 90%;
+     }
+     .modal-content{
+        height: fit-content;
+    }
+    .modal-container{
+        height: 120vh;
+        width: 120vw;
+    }
+    #delete-report-button,#completed-report-button,#view-report-button{
+        padding-right: 7px;
+    }
+  
+}
+@media only screen and (max-height:476px){
+
+    body{
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    .recent-grid{
+        display: block;
+    }
+    .customers,.reports,.collection-points{
+        padding-bottom: 30px;
+        
+    }
+
+    .collection-points{
+        width: auto;
+    }
+     .modal{
+         height:60%;
+         width: 60%;
+     }
+     .modal-content{
+         height: fit-content;
+     }
+
+}

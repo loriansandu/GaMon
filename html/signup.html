@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js"></script>
+    <title>Signup</title>
+</head>
+<body>
+    <div class="center">
+        <h1>Create account</h1>
+        <form method="post" action="javascript:signupCompleted()" >
+            <div class="txt_field">
+                <input type="text" required>
+                <span></span>
+                <label>Username</label>
+            </div>
+            <div class="txt_field">
+                <input type="password"required id="psw" >
+                <span></span>
+                <label>Password</label>
+            </div>
+            <div class="txt_field">
+                <input type="password"required id="pswConfirm" onkeyup="passwordIdentical()">
+                <span></span>
+                <label>Confirm Password</label>
+            </div>
+            <span id="wrong_pass_alert"></span>
+            <select id="accountType" name="accountType">
+                <option selected >Citizen</option>
+                <option>Admin</option>
+            </select>
+            <input type="submit" id="registerButton" value ="Register" >
+            <div class="sign_up">
+                Already have an account? <a href="../html/login.html">Sign In</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../js/dashboard_admin.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="../js/pie-chart.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin='anonymous'></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/menu.css" />
+    <link rel="stylesheet" href="../css/modal.css" />
+    <link rel="stylesheet" href="../css/dashboard_admin.css" />
+
+
+    <title>Dashboard page</title>
+</head>
+
+<body>
+    <header>
+        <div id="brand"><a href="../html/landing-page.html">Admin</a></div>
+        <nav>
+            <ul>
+                <li><a href="../html/admin.html">Home</a></li>
+                <li><a href="../html/citizen.html">Citizen</a></li>
+                <li><a class="active" href="../html/dashboard_admin.html">Dashboard</a></li>
+                <li><a href="../html/myprofile_admin.html">My Profile</a></li>
+                <li id="signout"><a href="../html/login.html">Signout</a></li>
+            </ul>
+        </nav>
+        <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+            <ul class="mobile-menu">
+                <li><a href="../html/admin.html">Home</a></li>
+                <li><a href="../html/../html/citizen.html">Citizen</a></li>
+                <li><a class="active" href="../html/dashboard_admin.html">Dashboard</a></li>
+                <li><a href="../html/myprofile_admin.html">My Profile</a></li>
+                <li id="signout"><a href="../html/login.html">Signout</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="recent-grid" id="gridID">
+        <div class="reports">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Recent Reports</h3>
+
+                    <button>
+                        See all <span class="las la-arrow-right"></span>
+                    </button>
+                </div>
+                <div class="card-body">
+                    <table width="100%">
+                        <thead>
+                            <tr>
+                                <td>Username</td>
+                                <td>Collection Point</td>
+                                <td></td>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>
+                                    <span onclick="openModal2()"id="view-report-button" class="fa fa-edit"></span>
+                                    <span onclick=""id="completed-report-button">&#10004;</span>
+                                    <span onclick=""id="delete-report-button">&times;</span>
+                                   
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>test</td>
+                                <td>test</td>
+                                <td><span onclick=""id="view-report-button" class="fa fa-edit"></span>
+                                    <span onclick=""id="completed-report-button">&#10004;</span>
+                                    <span onclick=""id="delete-report-button">&times;</span>  
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="customers">
+            <div class="card">
+                <div class="card-header">
+                    <h3>New accounts</h3>
+
+                    <button>
+                        See all <span class="las la-arrow-right"></span>
+                    </button>
+                </div>
+                <div class="card-body">
+                    <div class="customer"></div>
+                </div>
+
+            </div>
+        </div>
+        <div class="collection-points">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Collection points</h3>
+
+                    <button onclick="openModal()">
+                        Add new collection point <span class="las la-arrow-right"></span>
+                    </button>
+                </div>
+                <div class="card-body">
+                    <table width="100%" id="collectionPointsTable">
+                        <thead>
+                            <tr>
+                                <td>Location</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodycollectionPoints">
+                            <tr>
+                                <td>test</td>
+                                <td></td>
+                                <td>
+                                    <span onclick="deleteRow(this)"id="remove-button">&times;</span>
+                                </td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+               </div>
+        </div>
+       
+    </div>
+    <div id="piechart"></div>
+    </div>
+    <div id="myModal" class="modal-container">
+        <div  class="modal">
+          <div  class="modal-content">
+            <div class="modal-header">
+              <span class="close">&times;</span>
+              <h2>Add collection point</h2>
+            </div>
+            <div class="modal-body">
+              <div class="coordinates">
+                <label>Coordinates</label>
+                <input type="text" id="location-coordinates">
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button id="send-button" class="modal__button">
+                ADD
+            </button>
+            <button id="cancel-button" class="modal__button">
+              CANCEL
+          </button>
+            </div>
+          </div>
+        </div>
+        
+    </div>
+    <div id="myModal2" class="modal-container">
+        <div  class="modal">
+          <div  class="modal-content">
+            <div class="modal-header">
+              <span class="close">&times;</span>
+              <h2>Report</h2>
+            </div>
+            <div class="modal-body">
+              <div class="user">
+                <label>User</label>
+                <input type="text" id="user-report" readonly>
+                </div>
+              <div class="date">
+                <label>Date</label>
+                <input type="text" id="date-report" readonly>
+              </div>
+              <div class="coordinates">
+                <label>Coordinates</label>
+                <input type="text" id="location-coordinates-report" readonly>
+              </div>
+              <div class="img_upload">
+                <label>Photo</label>
+              </div>
+              <div class="message">
+                <label>Message</label>
+                <textarea rows="5" cols="30" id="message-text-report" name="text"readonly></textarea>
+        <br/>
+              </div>
+              <p></p>
+            </div>
+            <div class="modal-footer">
+              <button id="save-button" class="modal__button">
+                SAVE REPORT
+            </button>
+            <button id="cancel-button2" class="modal__button">
+              CANCEL
+          </button>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+</body>
+
+</html>

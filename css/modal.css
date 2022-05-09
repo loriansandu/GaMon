@@ -1,0 +1,155 @@
+
+.container{
+    display: flex;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    flex-direction: column;
+    text-align: center;
+  } 
+
+  .modal-container{
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding-top: 2%;
+    transition: 0.5s;
+  }
+  .modal {
+    display: flex;
+    z-index: 1; 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    width: 50%;
+    height: 70%; 
+    overflow: auto; 
+    -webkit-animation-name: fadeIn; 
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    width: 100%;
+    height: 100%;
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    display: flex;
+    flex-direction:column;
+    text-align: center;
+  }
+
+  .modal__button{
+    
+    color: #FFF;
+    transition: .3s;
+    width: 30%;
+    height: 100%;
+    border-radius: 15px;
+   
+  }
+
+  .coordinates label, .user label,.date label,.img_upload label, .message label{
+    left:5px;
+    color: #2222e9;
+    transform: translatey(-50%);
+    pointer-events: none;
+
+
+}
+  .coordinates,.user,.img_upload,.message,.date{
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+  #send-button,#save-button{
+    background-color: rgba(0, 128, 0, 0.488);
+    border: 2px rgba(0, 128, 0, 0.488);
+
+  }
+
+  #cancel-button, #cancel-button2{
+    background-color: grey;
+    border: 2px solid grey;
+  }
+
+  #send-button:hover,#save-button:hover{
+    box-shadow: inset 400px 0 0 0 rgba(8, 67, 40, 0.664);
+    cursor: pointer;
+  }
+
+  #cancel-button:hover, #cancel-button2:hover{
+    box-shadow: inset 400px 0 0 0 rgba(0, 0, 0, 0.664);
+    cursor: pointer;
+  }
+
+  #location-coordinates,#img-upload,#message-text{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 95%;
+    height: 40px;
+    background: none;
+    font-size: 15px;
+    
+  }
+  #location-coordinates-report,#user-report,#img-upload-report,#message-text-report,#date-report{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 95%;
+    height: 40px;
+    background: none;
+    font-size: 15px;
+    
+  }
+
+  input[type="file"]  {
+    margin: 0 auto;
+    align-items: center;
+}
+
+  #message-text,#message-text-report{
+    height: 100px;
+  }
+
+
+
+  .close {
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .modal-header {
+    
+    height: 5%;
+  }
+  
+  .modal-body { height: 90%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .modal-footer {
+    
+    height: 5%;
+  }

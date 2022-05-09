@@ -1,0 +1,119 @@
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+}
+#gamon-name {
+    font-family: Verdana;
+    color: #09c372;
+    font-size: 20px;
+    height: 50%;
+    text-align: center;
+}
+#gamon-logo {
+    text-align: center;
+    height: 50%;
+}
+#gamon-logo-id {
+    padding-bottom: 30px;
+}
+#header-wrapper {
+    display: flex;
+}
+#gamon-logo-and-name {
+    margin: 0 0 0 113px;
+    width: 50%;
+}
+#header-buttons-wrapper {
+    width: 50%;
+    margin: 72px 103px 0 0;
+}
+#header-buttons a {
+    text-decoration: none;
+    color: inherit;
+}
+#header-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 65px;
+    font-family: Verdana;
+    font-size: 20px;
+    color: #818181;
+}
+
+#header-buttons a:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+#text-section {
+    margin-left: 1050px;
+}
+#text-section-content {
+    border: 3px solid #00563B;
+    border-radius: 10px;
+    max-width: 650px;
+    height: 400px;
+}
+#text-section-content div {
+    text-align: center;
+}
+#main-content-wrapper {
+    display: flex;
+}
+#main-content-wrapper-image {
+    padding-left: 100px;
+}
+#main-content-wrapper-text {
+    width: 50%;
+    padding: 0 0 0 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+#about-us-button {
+    cursor: pointer;
+}
+#contacts-button {
+    cursor: pointer;
+}
+#main-content-wrapper-text h3 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 50px;
+    color: #09c372 
+}
+#main-content-wrapper-text div {
+    padding-top: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #09c372
+}
+@media screen and (max-width: 600px) {
+   #header-buttons {
+       display: none;
+   }
+  #main-content-wrapper {
+      display: none;
+  }
+  #gamon-logo-and-name {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+  }
+  #gamon-logo {
+      margin: 0;
+      padding: 0;
+  }
+  #gamon-logo-id {
+      margin: 0;
+      padding: 0;
+  }
+  #gamon-name {
+      margin: 0;
+      padding: 0;
+  }
+  #header-buttons-wrapper {
+      margin: 0;
+      padding: 0;
+  }
+}
